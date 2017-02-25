@@ -3,6 +3,8 @@
 socket使用的[__libuv__](https://github.com/libuv/libuv.git)库。
 此目录下包含的libuv版本为1.11.1
 
+后续计划增加kafka实现
+
 
 # 注意事项
 __1.需要在使用的工程中加入以下库：__
