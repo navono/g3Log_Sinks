@@ -131,9 +131,7 @@ namespace g3
 		_uvAsync->data = this;
 
 		sockaddr_in svrAddr;
-		svrAddr.sin_family = AF_INET;
-		uv_inet_pton(AF_INET, _svrIP.c_str(), &svrAddr.sin_addr);
-		svrAddr.sin_port = htons(_svrPort);
+		uv_ip4_addr(_svrIP.c_str(), _svrPort, &svrAddr);
 
 		uv_connect_t uvCon;
 		r = uv_tcp_connect(&uvCon, _uvClient, (struct sockaddr*)&svrAddr, on_uv_connect);
